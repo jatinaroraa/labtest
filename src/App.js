@@ -1,25 +1,28 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import Navbar from "./components/Navbar";
+import Sidebar from "./components/Sidebar/Sidebar";
+import Crousels from "./components/Crausel/Crousels";
+import Home from "./Pages/Home";
+import { Routes, Route } from "react-router-dom";
+import ContactUs from "./components/Contactus";
+import Footer from "./components/Footer";
 
-function App() {
+export default function App() {
+  const [isopen, setisopen] = useState(false);
+  const toggle = () => {
+    setisopen(!isopen);
+  };
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Navbar toggle={toggle} />
+      <Sidebar isopen={isopen} toggle={toggle} />
+      <Routes>
+        <Route path="/" element={<Home />} />
+
+        <Route path="/Contactus" element={<ContactUs />} />
+        <Route path="/services" element={<ContactUs />} />
+      </Routes>
+      <Footer />
+    </>
   );
 }
-
-export default App;
