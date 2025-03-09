@@ -38,7 +38,7 @@
   color: #007bff;
 }
 
-/* Cart Icon */
+/* Cart Icon for Desktop */
 .cart-icon {
   position: relative;
   font-size: 1.5rem;
@@ -57,7 +57,17 @@
   padding: 3px 6px;
   border-radius: 50%;
 }
-
+.cart-count_phone_view {
+  /* position: absolute; */
+  /* top: -5px; */
+  /* right: -10px; */
+  background: red;
+  color: white;
+  font-size: 0.6rem;
+  font-weight: bold;
+  padding: 3px 6px;
+  border-radius: 50%;
+}
 /* Menu Icon (for mobile) */
 .menu-icon {
   display: none;
@@ -81,9 +91,62 @@
     background: #fff;
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
     padding: 10px;
+    z-index: 1000; /* Ensures it appears above other elements */
   }
 
   .menu-items.open {
     display: flex;
+  }
+
+  /* Hide Desktop Cart */
+  .cart-icon-desktop {
+    display: none;
+  }
+
+  /* Show Cart Inside Menu */
+  .cart-icon-mobile {
+    display: flex;
+    align-items: center;
+    font-size: 1.5rem;
+    color: #333;
+    text-decoration: none;
+    margin-top: 10px;
+    position: relative;
+  }
+  .cart-icon-mobile .cart-count {
+    display: flex; /* Ensure it appears */
+  }
+}
+.cart-count_phone_view {
+  display: none;
+}
+/* Hide Cart Icon inside Menu on Desktop */
+.cart-icon-mobile {
+  display: none; /* Hide by default */
+}
+
+/* Show Cart Icon inside Menu in Mobile View */
+@media screen and (max-width: 768px) {
+  .cart-icon-mobile {
+    display: flex;
+    align-items: center;
+    font-size: 1.5rem;
+    color: #333;
+    text-decoration: none;
+    margin-top: 10px;
+    position: relative;
+  }
+
+  /* Ensure cart count is visible in mobile */
+  .cart-icon-mobile .cart-count {
+    display: flex; /* Ensure it appears */
+  }
+  .cart-count_phone_view {
+    display: flex;
+  }
+
+  /* Hide Desktop Cart */
+  .cart-icon-desktop {
+    display: none;
   }
 }

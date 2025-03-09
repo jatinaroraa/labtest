@@ -5,8 +5,8 @@ import { FaBars, FaShoppingCart } from "react-icons/fa";
 import { navbarItems } from "./Navbaritems";
 import { useCart } from "../context/CartProvider";
 
-const Navbar = ({ toggle }) => {
-  const { cart } = useCart(); // Get cart state
+const Navbar = () => {
+  const { cart } = useCart();
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
@@ -20,7 +20,7 @@ const Navbar = ({ toggle }) => {
         {/* Menu Toggle Button (for mobile) */}
         <FaBars className="menu-icon" onClick={() => setMenuOpen(!menuOpen)} />
 
-        {/* Navbar Links */}
+        {/* Navbar Links + Cart (inside menu for mobile) */}
         <div className={`menu-items ${menuOpen ? "open" : ""}`}>
           {navbarItems.map((item, index) => (
             <Link
@@ -32,10 +32,20 @@ const Navbar = ({ toggle }) => {
               {item.title}
             </Link>
           ))}
+
+          {/* Cart Icon Inside Menu for Mobile */}
+          <Link
+            to="/cart"
+            className="cart-icon-mobile"
+            onClick={() => setMenuOpen(false)}
+          >
+            <FaShoppingCart />
+            <span className="cart-count_phone_view">{cart.length}</span>
+          </Link>
         </div>
 
-        {/* Cart Icon with Count */}
-        <Link to="/cart" className="cart-icon">
+        {/* Cart Icon for Desktop (hidden in mobile) */}
+        <Link to="/cart" className="cart-icon cart-icon-desktop">
           <FaShoppingCart />
           <span className="cart-count">{cart.length}</span>
         </Link>

@@ -85,7 +85,7 @@ const LabTestsPage = () => {
         backgroundPosition: "center",
         backgroundRepeat: "no-repeat",
         height: "100%",
-        width: "90%",
+        width: "97.4%",
       }}
     >
       <div
