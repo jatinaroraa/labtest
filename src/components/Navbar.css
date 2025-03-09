@@ -1,64 +1,89 @@
-nav {
-  height: 50px;
+.navbar {
+  background: #fff;
+  padding: 10px 20px;
   display: flex;
   justify-content: space-between;
-  padding: 1rem 2rem;
-  z-index: 100;
-  position: fixed;
-  width: 100vw;
-  background: rgb(255, 255, 255);
+  align-items: center;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  position: relative;
 }
-.link {
+
+.navbar-container {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
   text-decoration: none;
-  display: flex;
-  color: black;
-  align-items: center;
-  padding: 0 1rem;
-  height: 100%;
-  cursor: pointer;
-  font-weight: 500;
-  font-size: 16px;
+  color: #333;
 }
-.mobile-menu-icon {
-  display: none;
-}
-.icons {
-  display: flex;
-  align-items: center;
-}
-.icon-tabler {
-  margin-right: 5px;
-}
-.github-icon {
-  color: white;
-}
+
 .menu-items {
   display: flex;
-  align-items: center;
-  /* background-color: red; */
+  gap: 20px;
 }
 
+.menu-items .link {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.menu-items .link:hover {
+  color: #007bff;
+}
+
+/* Cart Icon */
+.cart-icon {
+  position: relative;
+  font-size: 1.5rem;
+  color: #333;
+  text-decoration: none;
+}
+
+.cart-count {
+  position: absolute;
+  top: -5px;
+  right: -10px;
+  background: red;
+  color: white;
+  font-size: 0.8rem;
+  font-weight: bold;
+  padding: 3px 6px;
+  border-radius: 50%;
+}
+
+/* Menu Icon (for mobile) */
+.menu-icon {
+  display: none;
+  font-size: 1.8rem;
+  cursor: pointer;
+}
+
+/* Responsive Styles */
 @media screen and (max-width: 768px) {
-  .menu-items,
-  .signup-button,
-  .github-corner {
-    display: none;
-  }
-  .mobile-menu-icon {
+  .menu-icon {
     display: block;
-    color: white;
-    display: flex;
-    align-items: center;
-    font-size: 4vh;
-    cursor: pointer;
-    top: 0;
-    right: 0;
   }
-}
 
-.github-corner {
-  position: fixed;
-  top: 0;
-  z-index: 99999;
-  right: 0px;
+  .menu-items {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 50px;
+    left: 0;
+    width: 100%;
+    background: #fff;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+  }
+
+  .menu-items.open {
+    display: flex;
+  }
 }

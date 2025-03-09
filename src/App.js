@@ -6,6 +6,10 @@ import Home from "./Pages/Home";
 import { Routes, Route } from "react-router-dom";
 import ContactUs from "./components/Contactus";
 import Footer from "./components/Footer";
+import LabTestsPage from "./Pages/Services/ServicesPage";
+import HematologyTestsPage from "./Pages/Services/TestPage";
+import { CartProvider } from "./context/CartProvider";
+import CartPage from "./Pages/CartPage";
 
 export default function App() {
   const [isopen, setisopen] = useState(false);
@@ -14,15 +18,20 @@ export default function App() {
   };
   return (
     <>
-      <Navbar toggle={toggle} />
-      <Sidebar isopen={isopen} toggle={toggle} />
-      <Routes>
-        <Route path="/" element={<Home />} />
+      <CartProvider>
+        <Navbar toggle={toggle} />
+        <Sidebar isopen={isopen} toggle={toggle} />
+        <Routes>
+          <Route path="/" element={<Home />} />
 
-        <Route path="/Contactus" element={<ContactUs />} />
-        <Route path="/services" element={<ContactUs />} />
-      </Routes>
-      <Footer />
+          <Route path="/Contactus" element={<ContactUs />} />
+          <Route path="/Services" element={<LabTestsPage />} />
+          <Route path="/Services/list" element={<HematologyTestsPage />} />
+
+          <Route path="/cart" element={<CartPage />} />
+        </Routes>
+        <Footer />
+      </CartProvider>
     </>
   );
 }

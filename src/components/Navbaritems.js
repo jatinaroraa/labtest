@@ -5,6 +5,6 @@ export const navbarItems = [
   },
   {
     title: "Services",
-    link: "/Contactus",
+    link: "/Services",
   },
 ];
