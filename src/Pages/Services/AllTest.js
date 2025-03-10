@@ -1,8 +1,8 @@
-import React from "react";
-import { Card, Button, Row, Col } from "antd";
+import React, { useState } from "react";
+import { Card, Button, Row, Col, Input } from "antd";
 import styled from "styled-components";
 import { useCart } from "../../context/CartProvider";
-import { useLocation } from "react-router-dom";
+import { allTestList } from "../../utils/AlltestList";
 
 const tests = [
   {
@@ -62,17 +62,52 @@ const StyledCard = styled(Card)`
   }
 `;
 
-const HematologyTestsPage = () => {
+const SearchContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+
+  @media (min-width: 768px) {
+    justify-content: flex-end;
+    margin-bottom: 10px;
+  }
+`;
+
+const StyledInput = styled(Input)`
+  width: 100%;
+
+  @media (min-width: 768px) {
+    width: 250px; /* Smaller width for laptops */
+  }
+`;
+
+const AllTest = () => {
   const { cart, addToCart, removeFromCart } = useCart();
-  const location = useLocation();
-  const tests = location.state?.tests || [];
-  const name = location.state?.name || "Tests";
+  const [searchTerm, setSearchTerm] = useState("");
+
+  // Filter tests based on search input
+  const filteredTests = allTestList.filter((test) =>
+    test.name.toLowerCase().includes(searchTerm.toLowerCase())
+  );
 
   return (
     <div style={{ padding: "20px" }}>
-      <h2>{name}</h2>
+      <h2
+        style={{
+          textAlign: "center",
+        }}
+      >
+        All Tests
+      </h2>
+      <SearchContainer>
+        <StyledInput
+          placeholder="Search for a test..."
+          value={searchTerm}
+          onChange={(e) => setSearchTerm(e.target.value)}
+        />
+      </SearchContainer>
       <Row gutter={[16, 16]}>
-        {tests.map((test, index) => {
+        {filteredTests.map((test, index) => {
           const isInCart = cart.some((item) => item.name === test.name);
 
           return (
@@ -110,4 +145,4 @@ const HematologyTestsPage = () => {
   );
 };
 
-export default HematologyTestsPage;
+export default AllTest;

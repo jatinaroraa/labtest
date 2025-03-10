@@ -2,37 +2,48 @@ import React from "react";
 import { Card, Row, Col } from "antd";
 import styled from "styled-components";
 import { useNavigate } from "react-router-dom";
+import {
+  BiochemistryTests,
+  HematologyTests,
+  SerologyTest,
+} from "../../utils/AlltestList";
 
 const data = [
   {
     title: "Haematology",
     description: "Advanced blood tests and analysis",
     image: "https://www.drdangslab.com/PhotosAndLogos/ServiceMain1.webp",
+    test: HematologyTests,
   },
   {
     title: "Biochemistry",
     description: "Comprehensive biochemical testing",
     image: "https://www.drdangslab.com/PhotosAndLogos/ServiceMain2.webp",
+    test: BiochemistryTests,
   },
+  // {
+  //   title: "Clinical Pathology",
+  //   description: "Accurate pathology results",
+  //   image: "https://www.drdangslab.com/PhotosAndLogos/ServiceMain3.webp",
+  //   test: HematologyTests,
+  // },
+  // {
+  //   title: "Allergy & Intolerance",
+  //   description: "Identify allergens and intolerances",
+  //   image: "https://www.drdangslab.com/PhotosAndLogos/ServiceMain5.webp",
+  //   test: HematologyTests,
+  // },
   {
-    title: "Clinical Pathology",
-    description: "Accurate pathology results",
-    image: "https://www.drdangslab.com/PhotosAndLogos/ServiceMain3.webp",
-  },
-  {
-    title: "Microbiology",
-    description: "Specialized microbial tests",
-    image: "https://www.drdangslab.com/PhotosAndLogos/VirtualTOur42.webp",
-  },
-  {
-    title: "Allergy & Intolerance",
-    description: "Identify allergens and intolerances",
-    image: "https://www.drdangslab.com/PhotosAndLogos/ServiceMain5.webp",
-  },
-  {
-    title: "Histocytopathology",
+    title: "Serology",
     description: "Microscopic examination of tissues",
     image: "https://www.drdangslab.com/PhotosAndLogos/ServiceMain6.webp",
+    test: SerologyTest,
+  },
+  {
+    title: "Immunoasaay",
+    description: "Specialized microbial tests",
+    image: "https://www.drdangslab.com/PhotosAndLogos/VirtualTOur42.webp",
+    test: HematologyTests,
   },
 ];
 
@@ -72,8 +83,12 @@ const StyledCard = styled(Card)`
 // https://www.drdangslab.com/PhotosAndLogos/servicessC.webp
 const LabTestsPage = () => {
   const navigate = useNavigate();
-  const handleClick = () => {
-    return navigate("/Services/list");
+  const handleClick = (item) => {
+    let test = [];
+
+    return navigate("/Services/list", {
+      state: { tests: item?.test, name: item?.title },
+    });
   };
   return (
     <div
@@ -119,7 +134,7 @@ const LabTestsPage = () => {
         <Row gutter={[16, 16]}>
           {data.map((item, index) => (
             <Col xs={24} sm={12} md={8} key={index}>
-              <StyledCard onClick={handleClick}>
+              <StyledCard onClick={() => handleClick(item)}>
                 <img src={item.image} alt={item.title} />
                 <h3>{item.title}</h3>
                 <p>{item.description}</p>

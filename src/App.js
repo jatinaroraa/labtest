@@ -10,6 +10,7 @@ import LabTestsPage from "./Pages/Services/ServicesPage";
 import HematologyTestsPage from "./Pages/Services/TestPage";
 import { CartProvider } from "./context/CartProvider";
 import CartPage from "./Pages/CartPage";
+import AllTest from "./Pages/Services/AllTest";
 
 export default function App() {
   const [isopen, setisopen] = useState(false);
@@ -27,6 +28,7 @@ export default function App() {
           <Route path="/Contactus" element={<ContactUs />} />
           <Route path="/Services" element={<LabTestsPage />} />
           <Route path="/Services/list" element={<HematologyTestsPage />} />
+          <Route path="/alltest" element={<AllTest />} />
 
           <Route path="/cart" element={<CartPage />} />
         </Routes>

@@ -1,4 +1,5 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 
 const CardContainer = styled.div`
@@ -58,13 +59,14 @@ const Button = styled.button`
 `;
 
 const CardSection = () => {
+  const navigate = useNavigate();
   return (
     <CardContainer>
       <Card>
         <Title>Find a Lab Test</Title>
         <Line />
         <Description>Find a lab test using our simple search tool</Description>
-        <Button>Search</Button>
+        <Button onClick={() => navigate("/alltest")}>Search</Button>
       </Card>
 
       <Card>
@@ -80,7 +82,7 @@ const CardSection = () => {
         <Description>
           Get in touch with our friendly clinical lab team
         </Description>
-        <Button>Get in touch</Button>
+        <Button onClick={() => navigate("/Contactus")}>Get in touch</Button>
       </Card>
     </CardContainer>
   );
