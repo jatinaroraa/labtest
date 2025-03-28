@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/labtest/static/css/main.87235504.css",
-    "main.js": "/labtest/static/js/main.3f576693.js",
+    "main.js": "/labtest/static/js/main.d6da6605.js",
     "static/js/453.e859a2be.chunk.js": "/labtest/static/js/453.e859a2be.chunk.js",
     "static/media/labtestbanner.jpg": "/labtest/static/media/labtestbanner.c6823615121a4de9f0a0.jpg",
     "static/media/MenHealth.jpg": "/labtest/static/media/MenHealth.11180d489c9d42b09c8b.jpg",
@@ -13,11 +13,11 @@
     "static/media/sexual-health.jpg": "/labtest/static/media/sexual-health.99212798f270e1edd862.jpg",
     "index.html": "/labtest/index.html",
     "main.87235504.css.map": "/labtest/static/css/main.87235504.css.map",
-    "main.3f576693.js.map": "/labtest/static/js/main.3f576693.js.map",
+    "main.d6da6605.js.map": "/labtest/static/js/main.d6da6605.js.map",
     "453.e859a2be.chunk.js.map": "/labtest/static/js/453.e859a2be.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.87235504.css",
-    "static/js/main.3f576693.js"
+    "static/js/main.d6da6605.js"
   ]
 }
