@@ -12,6 +12,7 @@ import { CartProvider } from "./context/CartProvider";
 import CartPage from "./Pages/CartPage";
 import AllTest from "./Pages/Services/AllTest";
 import { ToastContainer } from "react-toastify";
+import Navbar2 from "./components/NavBar2";
 
 export default function App() {
   const [isopen, setisopen] = useState(false);
@@ -21,7 +22,8 @@ export default function App() {
   return (
     <>
       <CartProvider>
-        <Navbar toggle={toggle} />
+        {/* <Navbar toggle={toggle} /> */}
+        <Navbar2 />
         <Sidebar isopen={isopen} toggle={toggle} />
         <Routes>
           <Route path="/" element={<Home />} />
