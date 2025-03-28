@@ -14,7 +14,14 @@ const Navbar = () => {
       <div className="navbar-container">
         {/* Logo */}
         <Link to="/" className="logo">
-          Logo
+          <img
+            style={{
+              objectFit: "cover",
+            }}
+            src={require("../Assets/logo.png")}
+            width={100}
+            height={50}
+          />
         </Link>
 
         {/* Menu Toggle Button (for mobile) */}

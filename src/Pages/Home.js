@@ -9,6 +9,7 @@ import FeaturedTests from "../components/FeaturedTests";
 import Cardsection2 from "../components/CardSection2";
 import Footer from "../components/Footer";
 import ContactUs from "../components/Contactus";
+import Packages from "../components/packages/Packages";
 
 export default function Home() {
   return (
@@ -21,6 +22,8 @@ export default function Home() {
       <CardSection />
       <Cardsection2 />
       <ServicesSection />
+      <Packages />
+
       <LabTestsSection />
       <FeaturedTests />
     </div>

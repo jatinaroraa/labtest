@@ -11,6 +11,7 @@ import HematologyTestsPage from "./Pages/Services/TestPage";
 import { CartProvider } from "./context/CartProvider";
 import CartPage from "./Pages/CartPage";
 import AllTest from "./Pages/Services/AllTest";
+import { ToastContainer } from "react-toastify";
 
 export default function App() {
   const [isopen, setisopen] = useState(false);
@@ -34,6 +35,7 @@ export default function App() {
         </Routes>
         <Footer />
       </CartProvider>
+      <ToastContainer />
     </>
   );
 }

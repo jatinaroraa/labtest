@@ -1,9 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import { useCart } from "../context/CartProvider";
 import { Link } from "react-router-dom";
 import { Table, Button, Row, Col, Typography } from "antd";
 import { MinusOutlined, PlusOutlined, DeleteOutlined } from "@ant-design/icons";
 import styled from "styled-components";
+import CheckoutModal from "../components/modal/CheckoutModal";
 
 const { Title } = Typography;
 
@@ -36,19 +37,19 @@ const EnquiryButton = styled(Button)`
 
 const CartPage = () => {
   const { cart, removeFromCart, updateQuantity } = useCart();
-
+  const [isModalVisible, setIsModalVisible] = useState(false);
   const columns = [
     {
-      title: "Item",
+      title: "Tests",
       dataIndex: "name",
       key: "name",
       render: (text, record) => (
         <div style={{ display: "flex", alignItems: "center", gap: "15px" }}>
-          <img
+          {/* <img
             src={record.image}
             alt={text}
             style={{ width: "60px", height: "60px", borderRadius: "5px" }}
-          />
+          /> */}
           <span>{text}</span>
         </div>
       ),
@@ -106,7 +107,12 @@ const CartPage = () => {
           />
           <Row justify="center">
             <Col xs={24} md={12}>
-              <EnquiryButton type="primary">Enquiry Now</EnquiryButton>
+              <EnquiryButton
+                onClick={() => setIsModalVisible(true)}
+                type="primary"
+              >
+                Enquiry Now
+              </EnquiryButton>
             </Col>
           </Row>
         </>
@@ -117,6 +123,10 @@ const CartPage = () => {
           ← Back to Tests
         </Button>
       </Link>
+      <CheckoutModal
+        visible={isModalVisible}
+        onClose={() => setIsModalVisible(false)}
+      />
     </CartContainer>
   );
 };
