@@ -1,20 +1,23 @@
 {
   "files": {
     "main.css": "/labtest/static/css/main.87235504.css",
-    "main.js": "/labtest/static/js/main.bc866512.js",
-    "static/js/453.95f2096a.chunk.js": "/labtest/static/js/453.95f2096a.chunk.js",
+    "main.js": "/labtest/static/js/main.3f576693.js",
+    "static/js/453.e859a2be.chunk.js": "/labtest/static/js/453.e859a2be.chunk.js",
+    "static/media/labtestbanner.jpg": "/labtest/static/media/labtestbanner.c6823615121a4de9f0a0.jpg",
     "static/media/MenHealth.jpg": "/labtest/static/media/MenHealth.11180d489c9d42b09c8b.jpg",
     "static/media/WomenHealth.jpg": "/labtest/static/media/WomenHealth.a72e0dbb762e05c9c80f.jpg",
     "static/media/General-Health.jpg": "/labtest/static/media/General-Health.816363870bf065336c7c.jpg",
     "static/media/vlabs-img-scaled.jpg": "/labtest/static/media/vlabs-img-scaled.c8cacb79219258c9ed06.jpg",
+    "static/media/banner2.jpg": "/labtest/static/media/banner2.e9c9e2bb868ad3ef00d0.jpg",
+    "static/media/logo.png": "/labtest/static/media/logo.1546bd87675866259b9f.png",
     "static/media/sexual-health.jpg": "/labtest/static/media/sexual-health.99212798f270e1edd862.jpg",
     "index.html": "/labtest/index.html",
     "main.87235504.css.map": "/labtest/static/css/main.87235504.css.map",
-    "main.bc866512.js.map": "/labtest/static/js/main.bc866512.js.map",
-    "453.95f2096a.chunk.js.map": "/labtest/static/js/453.95f2096a.chunk.js.map"
+    "main.3f576693.js.map": "/labtest/static/js/main.3f576693.js.map",
+    "453.e859a2be.chunk.js.map": "/labtest/static/js/453.e859a2be.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.87235504.css",
-    "static/js/main.bc866512.js"
+    "static/js/main.3f576693.js"
   ]
 }
